@@ -1,0 +1,143 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  #- ./lib/cops/logger_cop.rb
+AllCops:
+  NewCops: enable
+  Exclude:
+    - .pryrc
+    - bin/*
+    - db/schema.rb
+    - node_modules/**/*
+    - vendor/**/*
+
+Layout/EndAlignment:
+  AutoCorrect: true
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+Layout/FirstArgumentIndentation:
+  EnforcedStyle: consistent
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+Layout/MultilineArrayLineBreaks:
+  Enabled: true
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: true
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented_relative_to_receiver
+Layout/LineLength:
+  AutoCorrect: true
+  Max: 120
+  Exclude:
+    - config/locales/**/*
+
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
+Lint/ShadowingOuterLocalVariable: # TODO: enable
+  Enabled: false
+Lint/UselessAccessModifier:
+  ContextCreatingMethods:
+    - class_methods
+
+Lint/DuplicateBranch:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Metrics/ParameterLists:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Naming/RescuedExceptionsVariableName:
+  PreferredName: error
+
+Naming/VariableNumber:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FormatStringToken:
+  EnforcedStyle: template
+Style/GuardClause: # TODO: enable
+  Enabled: false
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  IgnoreMacros: false
+Style/RaiseArgs:
+  Exclude:
+    - app/authentications/*.rb
+Style/SignalException:
+  Exclude:
+    - app/authentications/*.rb
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/DynamicFindBy:
+  Enabled: false
+
+Rails/FilePath:
+  EnforcedStyle: arguments
+
+Rails/RakeEnvironment:
+  Enabled: false
+
+Rails/ReversibleMigration:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - development
+    - test
+
+Rails/HttpPositionalArguments:
+  Enabled: false
+
+Style/SingleArgumentDig:
+  Enabled: false
+
+Rails/SquishedSQLHeredocs:
+  Enabled: false
+
+Lint/StructNewOverride:
+  Enabled: false
+Lint/MissingSuper:
+  Enabled: false
+Style/KeywordParametersOrder:
+  Enabled: false
+Style/OptionalBooleanParameter:
+  Enabled: false
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+Lint/EmptyBlock:
+  Enabled: false
+Style/OpenStructUse:
+  Enabled: false
