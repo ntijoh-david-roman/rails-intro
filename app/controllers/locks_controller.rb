@@ -7,6 +7,7 @@ class LocksController < ApplicationController
 
     def create
         lock = Lock.create(lock_params)
+        authorize lock
         render(json: lock)
     end
 
@@ -19,6 +20,7 @@ class LocksController < ApplicationController
     def unlock
         id = params[:id]
         lock = Lock.find(id)
+        authorize lock
         lock.unlocked = true 
         lock.save
         render(json: {message: 'Unlocked!'})
@@ -27,6 +29,7 @@ class LocksController < ApplicationController
     def update
         id = params[:id]
         lock = Lock.find(id)
+        authorize lock
         lock.update(lock_params())         
     end
 
